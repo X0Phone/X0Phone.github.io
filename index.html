@@ -8,6 +8,18 @@
 
 <body>
     <style>
+        @font-face {
+            font-family: himagsikan;
+            src: url(himagsikan/himagsikan.otf);
+            src: url(himagsikan/himagsikan.ttf);
+        }
+
+        @font-face {
+            font-family: himagsikanItalic;
+            src: url(himagsikan/himagsikan-italic.otf);
+            src: url(himagsikan/himagsikan-italic.ttf);
+        }
+
         /* ---- reset ---- */
         body {
             margin: 0;
@@ -21,7 +33,7 @@
 
         /* ---- particles.js container ---- */
         #particles-js {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             background-color: #161616;
@@ -68,9 +80,84 @@
         .count-particles {
             border-radius: 0 0 3px 3px;
         }
+
+        .neonText {
+            font-family: himagsikan;
+            animation: flicker 1.5s infinite alternate;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 4.2rem;
+        }
+
+        /* Flickering animation */
+        @keyframes flicker {
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px #ff00fe,
+                    0 0 80px #ff00fe,
+                    0 0 90px #ff00fe,
+                    0 0 100px #ff00fe,
+                    0 0 150px #ff00fe;
+
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+            }
+        }
+
+
+        /* Additional styling */
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        .container {
+            margin-top: 24vh;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            font-size: 18px;
+            font-family: "Helvetica Neue", sans-serif;
+            background-color: #010a01;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
     </style>
     <!-- particles.js container -->
-    <div id="particles-js"></div> <!-- stats - count particles -->
+    <div id="particles-js">
+        <div class="container">
+            <h1 class="neonText">
+                COMING SOON!
+            </h1>
+
+        </div>
+    </div> <!-- stats - count particles -->
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
     <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
 
@@ -193,7 +280,7 @@
         stats.domElement.style.top = '0px';
         document.body.appendChild(stats.domElement);
         count_particles = document.querySelector('.js-count-particles');
-        update = function() {
+        update = function () {
             stats.begin();
             stats.end();
             if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
