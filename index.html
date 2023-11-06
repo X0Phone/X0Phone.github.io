@@ -12,6 +12,14 @@
 
 <body>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        /* Apply Montserrat font to <p> and <a> tags */
+        p,
+        a {
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .xo-btn {
             background-color: #ff00fe !important;
             border-radius: 0% !important;
@@ -52,7 +60,7 @@
         #particles-js {
             overflow: hidden;
             width: 100%;
-            height: 100%;
+            height: 65vh;
             background-color: #161616;
             background-image: url("xo.png");
             background-repeat: no-repeat;
@@ -66,6 +74,10 @@
             position: relative;
             z-index: 1;
         }
+
+        /* .teal-top{
+            border-top: solid 10px #01fefb;
+        } */
 
         .bg-white {
             position: relative;
@@ -245,6 +257,8 @@
         .neonText {
             font-family: himagsikan;
             animation: flicker 1.5s infinite alternate;
+            -webkit-text-stroke: 1px #ff00fe;
+            /* width and color */
             color: #fff;
         }
 
@@ -290,7 +304,7 @@
         }
 
         .neoncontainer {
-            margin-top: 24vh;
+            /* margin-top: 24vh; */
             position: absolute;
             text-align: center;
             width: 100%;
@@ -312,6 +326,7 @@
 
         .layered-card {
             position: relative;
+            margin-top: 20px;
 
             /* Demo */
             height: auto;
@@ -356,6 +371,74 @@
         .card.layered-card {
             margin-top: -83px;
         }
+
+        .navbar-tech {
+            background: #fff;
+            position: relative;
+            box-shadow: 0px 0px 10px #ff00fe;
+            /* Add a subtle pink glowing shadow */
+            border-bottom: 1px solid #ff00fe;
+            /* Thin bottom border */
+        }
+
+        .navbar-tech .navbar-brand,
+        .navbar-tech .nav-link {
+            color: #bbb;
+        }
+
+        .navbar-tech .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-tech .navbar-brand:hover,
+        .navbar-tech .nav-link:hover {
+            color: #01fefb;
+        }
+
+        .navbar-tech .nav-link {
+            margin-left: 20px;
+        }
+
+        .navbar-tech .nav-item a {
+            color: #535055 !important;
+            text-transform: uppercase !important;
+        }
+
+        .navbar-tech .nav-item a:hover {
+            color: #49474b !important;
+            text-transform: uppercase !important;
+        }
+
+        .navbar-tech .cart-icon {
+            color: #01fefb;
+        }
+
+        .navbar-tech .search-icon {
+            color: #01fefb;
+        }
+
+        .black-border {
+            border: solid 3px #535055;
+        }
+
+        .pink-border {
+            border: solid 3px #ff00fe;
+        }
+
+        .circle {
+            border-radius: 50% !important;
+        }
+
+        .double-border {
+            border: 3px solid #535055;
+            /* First border */
+            box-shadow:
+                0 0 0 2px #ff00fe,
+                /* Second border */
+                0 0 0 3px #fff;
+            /* Third border (adjust the width as needed) */
+        }
     </style>
 
     <script>
@@ -373,14 +456,45 @@
         })
     </script>
 
+    <nav class="navbar navbar-expand-lg navbar-light navbar-tech" style="z-index: 2;">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="xo-icon.png" class="rounded circle double-border"
+                    alt="XO Phone"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-search search-icon"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart cart-icon"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <section>
         <!-- particles.js container -->
         <div id="particles-js">
-            <div class="neoncontainer">
-                <h1 class="neonText">
-                    COMING SOON!
+            <div class="neoncontainer mt-5">
+                <h1 class="neonText pt-5 mb-5">
+                    Love your phone..
                 </h1>
-
             </div>
             <span></span>
             <span></span>
@@ -392,18 +506,17 @@
             <span></span>
             <span></span>
             <span></span>
-        </div> <!-- stats - count particles -->
+        </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white teal-top">
         <div class="container">
-            <div class="row">
+            <div class="row pb-5">
                 <div class="col-lg-2 col-md-6 mb-2 offset-lg-1">
-                    <div class="card layered-card">
+                    <div class="card mb-5 layered-card">
                         <div class="layered-card__content">
                             <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 1">
                             <div class="card-body">
                                 <h5 class="card-title">Product 1</h5>
-                                <p class="card-text">Description of Product 1.</p>
                                 <p class="card-text">$19.99</p>
                                 <a href="#" class="btn btn-primary xo-btn">Add to Cart</a>
                             </div>
@@ -412,13 +525,12 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6 mb-2">
-                    <div class="card layered-card">
+                    <div class="card mb-5 layered-card">
                         <div class="layered-card__content">
 
                             <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 2">
                             <div class="card-body">
                                 <h5 class="card-title">Product 2</h5>
-                                <p class="card-text">Description of Product 2.</p>
                                 <p class="card-text">$29.99</p>
                                 <a href="#" class="btn btn-primary xo-btn">Add to Cart</a>
                             </div>
@@ -427,13 +539,12 @@
                 </div>
 
                 <div class="col-lg-2 col-md-6 mb-2">
-                    <div class="card layered-card">
+                    <div class="card mb-5 layered-card">
                         <div class="layered-card__content">
 
                             <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 3">
                             <div class="card-body">
                                 <h5 class="card-title">Product 3</h5>
-                                <p class="card-text">Description of Product 3.</p>
                                 <p class="card-text">$39.99</p>
                                 <a href="#" class="btn btn-primary xo-btn">Add to Cart</a>
                             </div>
@@ -441,13 +552,12 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-2">
-                    <div class="card layered-card">
+                    <div class="card mb-5 layered-card">
                         <div class="layered-card__content">
 
                             <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 3">
                             <div class="card-body">
                                 <h5 class="card-title">Product 3</h5>
-                                <p class="card-text">Description of Product 3.</p>
                                 <p class="card-text">$39.99</p>
                                 <a href="#" class="btn btn-primary xo-btn">Add to Cart</a>
                             </div>
@@ -455,13 +565,12 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-2">
-                    <div class="card layered-card">
+                    <div class="card mb-5 layered-card">
                         <div class="layered-card__content">
 
                             <img src="https://placehold.co/300x300" class="card-img-top" alt="Product 3">
                             <div class="card-body">
                                 <h5 class="card-title">Product 3</h5>
-                                <p class="card-text">Description of Product 3.</p>
                                 <p class="card-text">$39.99</p>
                                 <a href="#" class="btn btn-primary xo-btn">Add to Cart</a>
                             </div>
@@ -472,15 +581,7 @@
         </div>
     </section>
 
-
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
-    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {
@@ -610,6 +711,12 @@
         };
         requestAnimationFrame(update);;
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+
 
 </body>
 
