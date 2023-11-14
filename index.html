@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Use the jsDelivr CDN for Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
 
 </head>
 
@@ -440,6 +442,38 @@
                 0 0 0 3px #fff;
             /* Third border (adjust the width as needed) */
         }
+
+        footer {
+            background-color: #161616;
+            color: #fff;
+            padding: 20px;
+            border-top: 2px solid #ff00fe;
+            /* Minimalist border on top */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        /* Social media icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .pnk-text a{
+            color: #ff00fe !important;
+        }
+
+        .teal-text a{
+            color: #01fefb !important;
+        }
     </style>
 
     <script>
@@ -581,6 +615,28 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <!-- Your copyright or other text -->
+                    &copy; 2023 Your Company. All rights reserved.
+                </div>
+
+                <div class="social-icons col-xs-12 col-sm-6 teal-text text-right">
+                    <!-- Facebook icon (replace the "#" with your actual Facebook page URL) -->
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+
+                    <!-- Instagram icon (replace the "#" with your actual Instagram profile URL) -->
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include font-awesome for social media icons -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
